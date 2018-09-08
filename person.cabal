@@ -1,0 +1,40 @@
+name:                c-ffi-example
+version:             0.1.0.0
+synopsis:            C FFI Example w/ hsc2hs
+description:         C FFI Example w/ hsc2hs
+homepage:            https://github.dom/dmjio/c-ffi-example
+license:             BSD3
+license-file:        LICENSE
+author:              David Johnson
+maintainer:          djohnson.m@gmail.com
+copyright:           David Johnson (c) 2018-2019
+category:            FFI
+build-type:          Simple
+extra-source-files:  ChangeLog.md
+cabal-version:       >=1.10
+
+executable person
+  main-is:
+    Main.hs
+  hs-source-dirs:
+    exe
+  default-language:
+    Haskell2010
+  build-depends:
+    c-ffi-example, base
+
+library
+  build-depends:
+    base
+  hs-source-dirs:
+    src
+  exposed-modules:
+    Person
+  default-language:
+    Haskell2010
+  c-sources:
+    cbits/person.c
+  includes:
+    include/person.h
+  include-dirs:
+    include
