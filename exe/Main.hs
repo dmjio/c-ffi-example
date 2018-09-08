@@ -1,12 +1,12 @@
 module Main where
 
-import Person
-import Foreign.Marshal.Alloc
+import Control.Monad
+import Foreign.Marshal.Utils
 import Foreign.Storable
 
+import Person
+
 main :: IO ()
-main =
-  alloca $ \ptr -> do
-    poke ptr (Person "david" 30)
-    p <- showPerson ptr
-    print =<< peek p
+main = do
+  with (Person "david" 30)
+    (print <=< peek <=< showPerson)
