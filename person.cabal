@@ -6,7 +6,7 @@ homepage:            https://github.dom/dmjio/c-ffi-example
 license:             BSD3
 license-file:        LICENSE
 author:              David Johnson
-maintainer:          djohnson.m@gmail.com
+maintainer:          code@dmj.io
 copyright:           David Johnson (c) 2018-2019
 category:            FFI
 build-type:          Simple
